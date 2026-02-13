@@ -1,8 +1,8 @@
 Objective:
 
-To build a FastAPI (Python) application to manage Doctors and Patients data with validations and GET and POST operations.
+To build a FastAPI (Python) based application to manage Doctors and Patients data with validations and GET and POST operations.
 
-Steps for running this application in Windows 
+Steps for setting up the Windows system for running this application:
 
 1.	Install Python 3.9+ 
     Go to Python website: https://www.python.org/downloads/windows/
@@ -32,7 +32,7 @@ Steps for running this application in Windows
 
       SQLite is available from Python’s built-in sqlite3 module
 
-8.	Command to start the “uvocorn” server:
+8.	Command to start the “uvicorn” server:
    
         uvicorn main:app –reload
   	
@@ -42,8 +42,9 @@ Steps for running this application in Windows
      from the server. The following APIs are available for GET and POST operations for Doctors and Patients data:
                      i) doctors – GET all doctors details
                     ii) add_doctor -  POST – add a new doctor details
-                    iii) patients – GET all patients details
-                    iv) add_patient – POST – add a new patient details
+                    iii) get_doctor_by_id - GET a specific doctor details using their id
+                    iv) patients – GET all patients details
+                    v) add_patient – POST – add a new patient details
 
       To access the services from the API, we can use the FastAPI Swagger UI page available for with 
         the following address in the browser:
