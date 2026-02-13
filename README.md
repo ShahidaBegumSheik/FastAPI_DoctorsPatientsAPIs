@@ -1,6 +1,6 @@
 Objective:
 
-To build a FastAPI (Python) application to manage Doctors and Patients with validations and GET and POST operations.
+To build a FastAPI (Python) application to manage Doctors and Patients data with validations and GET and POST operations.
 
 Steps for running this application in Windows 
 
