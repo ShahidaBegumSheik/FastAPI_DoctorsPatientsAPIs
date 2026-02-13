@@ -9,10 +9,10 @@ def greet():
     return "Doctors Patients DB"
 
 doctors = [
-    Doctors(name="Andrew Thomas",specialization="ENT",email="andrth@gmail.com"),
-    Doctors(name="Sreenivasan",specialization="Pulmonology",email="sreeni@outlook.com"),
-    Doctors(name="Dillon", specialization="Neurologist",email="dillon@gmail.com", is_active=False),
-    Doctors(name="Gobu",specialization="Cardiology",email="drgobu@gmail.com"),
+    Doctors(id=1,name="Andrew Thomas",specialization="ENT",email="andrth@gmail.com"),
+    Doctors(id=2,name="Sreenivasan",specialization="Pulmonology",email="sreeni@outlook.com"),
+    Doctors(id=3,name="Dillon", specialization="Neurologist",email="dillon@gmail.com", is_active=False),
+    Doctors(id=4,name="Gobu",specialization="Cardiology",email="drgobu@gmail.com"),
 ]
 
 patients = [
@@ -35,6 +35,13 @@ def add_doctor_details(newdoctor: Doctors):
             raise HTTPException(status_code=400, detail="Email id incorrect")
         doctors.append(newdoctor)
     return newdoctor
+
+@app.get("/doctors/{doctor_id}")
+def get_doctor_by_id(doctor_id: int):
+    for doctor in doctors:
+        if doctor.id == doctor_id:
+            return doctor
+    raise HTTPException(status_code=404, detail="Doctor not found")
 
 @app.get("/patients")
 def get_patient_details():

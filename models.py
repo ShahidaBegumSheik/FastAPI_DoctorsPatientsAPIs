@@ -1,6 +1,7 @@
 from pydantic import BaseModel, field_validator
 
 class Doctors(BaseModel):
+    id: int
     name: str
     specialization: str
     email: str
